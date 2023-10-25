@@ -1,5 +1,9 @@
 用于加载过程  加载失败  加载异常  空数据的占位布局
 
+
+[AAR包下载](https://gitee.com/yuxyu47/UaoanStatusLayout/raw/master/UaoanStatusLayoutLibrary.aar)
+
+
 ### 无网络
 ![无网络](https://foruda.gitee.com/images/1698236726878310557/e9eb0a7a_4828217.jpeg "nowifi.jpg")
 ### 加载异常
