@@ -16,10 +16,17 @@
  **添加控件**
  
 ```
-<com.uaoanlao.tools.View.UaoanStatusLayoutView
+  <com.uaoanlao.tools.View.UaoanStatusLayoutView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/uaoanStatusLayoutView"/>
+        android:id="@+id/uaoanStatusLayoutView">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </com.uaoanlao.tools.View.UaoanStatusLayoutView>
 ```
 
 
@@ -28,19 +35,22 @@
 
 ```
 显示没有网络
-uaoanStatusLayoutView.setNoNnetworkWifi();
+uaoanStatusLayoutView.showNnetworkWifi();
+
+关闭所有
+uaoanStatusLayoutView.showNone();
 
 显示加载失败
-uaoanStatusLayoutView.setError();
+uaoanStatusLayoutView.showError();
 
 显示加载异常
-uaoanStatusLayoutView.setNull();
+uaoanStatusLayoutView.showNull();
 
 显示无数据
-uaoanStatusLayoutView.setDataVoid();
+uaoanStatusLayoutView.showDataVoid();
 
 显示加载中
-uaoanStatusLayoutView.setLoading();
+uaoanStatusLayoutView.showLoading();
 
 布局点击重试
 uaoanStatusLayoutView.setOnRootClickListener(new UaoanStatusLayoutView.OnRootClickListener() {
@@ -53,12 +63,12 @@ uaoanStatusLayoutView.setOnRootClickListener(new UaoanStatusLayoutView.OnRootCli
 ```
 
 
-| setNoNnetworkWifi | 显示没有网络 |
-|-------------------|------|
-| setError          | 显示加载失败 |
-| setNull           | 显示加载异常 |
-| setDataVoid       | 显示无数据  |
-| setLoading        | 显示加载中  |
+| showNoNnetworkWifi | 显示没有网络 |
+| showNone           |关闭所有|
+| showError          | 显示加载失败 |
+| showNull           | 显示加载异常 |
+| showDataVoid       | 显示无数据  |
+| showLoading        | 显示加载中  |
 
 
 [AAR包下载](https://github.com/uaoan/-UaoanStatusLayout/blob/f345782ee38637c456e0304d834218208197aa9e/UaoanToolsLibrary-debug.aar)
