@@ -59,3 +59,6 @@ uaoanStatusLayoutView.setOnRootClickListener(new UaoanStatusLayoutView.OnRootCli
 | setNull           | 显示加载异常 |
 | setDataVoid       | 显示无数据  |
 | setLoading        | 显示加载中  |
+
+
+### aar文件下载地址[aar文件下载地址](https://github.com/uaoan/-UaoanStatusLayout/blob/f345782ee38637c456e0304d834218208197aa9e/UaoanToolsLibrary-debug.aar)
