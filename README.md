@@ -63,12 +63,6 @@ uaoanStatusLayoutView.setOnRootClickListener(new UaoanStatusLayoutView.OnRootCli
 ```
 
 
-| showNoNnetworkWifi | 显示没有网络 |
-| showNone           |关闭所有|
-| showError          | 显示加载失败 |
-| showNull           | 显示加载异常 |
-| showDataVoid       | 显示无数据  |
-| showLoading        | 显示加载中  |
 
 
-[AAR包下载](https://github.com/uaoan/-UaoanStatusLayout/blob/f345782ee38637c456e0304d834218208197aa9e/UaoanToolsLibrary-debug.aar)
+[AAR包下载](https://gitee.com/yuxyu47/UaoanStatusLayout/raw/master/UaoanStatusLayoutLibrary.aar)
