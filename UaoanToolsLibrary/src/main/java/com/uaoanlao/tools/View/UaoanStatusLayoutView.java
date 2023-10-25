@@ -1,15 +1,12 @@
 package com.uaoanlao.tools.View;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
+import android.content.res.Resources;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -26,18 +23,22 @@ public class UaoanStatusLayoutView extends LinearLayout {
     private LinearLayout void_null;  //加载异常
     private LinearLayout void_void;  //无数据
     private LinearLayout pressedlinear;  //加载中
+    private Context mContext;
     public UaoanStatusLayoutView(Context context) {
         super(context);
         init(context);
+        mContext=context;
     }
     public UaoanStatusLayoutView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
+        mContext=context;
     }
 
     public UaoanStatusLayoutView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(context);
+        mContext=context;
     }
 
     public void init(Context context) {
@@ -61,45 +62,59 @@ public class UaoanStatusLayoutView extends LinearLayout {
 
 
     //没有网络
-    public void setNoNnetworkWifi() {
+    public void showNnetworkWifi() {
             void_wifi.setVisibility(View.VISIBLE);
             void_no.setVisibility(View.GONE);
             void_null.setVisibility(View.GONE);
             void_void.setVisibility(View.GONE);
             pressedlinear.setVisibility(View.GONE);
+        setParamsLayouts2();
     }
     //加载失败
-    public void setError() {
+    public void showError() {
             void_wifi.setVisibility(View.GONE);
             void_no.setVisibility(View.VISIBLE);
             void_null.setVisibility(View.GONE);
             void_void.setVisibility(View.GONE);
             pressedlinear.setVisibility(View.GONE);
+        setParamsLayouts2();
     }
     //加载异常
-    public void setNull() {
+    public void showNull() {
             void_wifi.setVisibility(View.GONE);
             void_no.setVisibility(View.GONE);
             void_null.setVisibility(View.VISIBLE);
             void_void.setVisibility(View.GONE);
             pressedlinear.setVisibility(View.GONE);
+        setParamsLayouts2();
     }
     //无数据
-    public void setDataVoid() {
+    public void showDataVoid() {
             void_wifi.setVisibility(View.GONE);
             void_no.setVisibility(View.GONE);
             void_null.setVisibility(View.GONE);
             void_void.setVisibility(View.VISIBLE);
             pressedlinear.setVisibility(View.GONE);
+        setParamsLayouts2();
     }
 
     //加载中
-    public void setLoading() {
+    public void showLoading() {
             void_wifi.setVisibility(View.GONE);
             void_no.setVisibility(View.GONE);
             void_null.setVisibility(View.GONE);
             void_void.setVisibility(View.GONE);
             pressedlinear.setVisibility(View.VISIBLE);
+            setParamsLayouts2();
+    }
+    //显示完成
+    public void showNone() {
+        void_wifi.setVisibility(View.GONE);
+        void_no.setVisibility(View.GONE);
+        void_null.setVisibility(View.GONE);
+        void_void.setVisibility(View.GONE);
+        pressedlinear.setVisibility(View.GONE);
+        setParamsLayouts1();
     }
 
     //设置点击接口
@@ -109,6 +124,29 @@ public class UaoanStatusLayoutView extends LinearLayout {
     }
     public interface OnRootClickListener{
         void onRootClick(View view);
+    }
+    private void setParamsLayouts1(){
+        setParamsLayout(void_wifi,0);
+        setParamsLayout(void_no,0);
+        setParamsLayout(void_null,0);
+        setParamsLayout(void_void,0);
+        setParamsLayout(pressedlinear,0);
+        setParamsLayout(root_view,0);
+    }
+
+    private void setParamsLayouts2(){
+        setParamsLayout(void_wifi,LinearLayout.LayoutParams.MATCH_PARENT);
+        setParamsLayout(void_no,LinearLayout.LayoutParams.MATCH_PARENT);
+        setParamsLayout(void_null,LinearLayout.LayoutParams.MATCH_PARENT);
+        setParamsLayout(void_void,LinearLayout.LayoutParams.MATCH_PARENT);
+        setParamsLayout(pressedlinear,LinearLayout.LayoutParams.MATCH_PARENT);
+        setParamsLayout(root_view,LinearLayout.LayoutParams.MATCH_PARENT);
+    }
+    private void setParamsLayout(View linearLayout,int point){
+        ViewGroup.LayoutParams layoutParams1 = linearLayout.getLayoutParams();
+        layoutParams1.width = point;
+        layoutParams1.height=point;
+        linearLayout.setLayoutParams(layoutParams1);
     }
 
 }

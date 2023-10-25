@@ -17,12 +17,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         uaoanStatusLayoutView=findViewById(R.id.uaoanStatusLayoutView);
-        uaoanStatusLayoutView.setLoading();
+        uaoanStatusLayoutView.showError();
         uaoanStatusLayoutView.setOnRootClickListener(new UaoanStatusLayoutView.OnRootClickListener() {
             @Override
             public void onRootClick(View view) {
-                Toast.makeText(MainActivity.this, "点击了", Toast.LENGTH_SHORT).show();
+                uaoanStatusLayoutView.showNone();
             }
         });
+    }
+    public void an(View vv){
+        uaoanStatusLayoutView.showLoading();
     }
 }
