@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         uaoanStatusLayoutView=findViewById(R.id.uaoanStatusLayoutView);
-        uaoanStatusLayoutView.setNoNnetworkWifi();
+        uaoanStatusLayoutView.setLoading();
         uaoanStatusLayoutView.setOnRootClickListener(new UaoanStatusLayoutView.OnRootClickListener() {
             @Override
             public void onRootClick(View view) {
