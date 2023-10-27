@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.library'
+    id 'maven-publish'
 }
 
 android {
@@ -22,6 +23,18 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+afterEvaluate {
+    publishing {
+        publications {
+            mavenAar(MavenPublication) {
+                from components.findByName('release')
+                groupId = 'com.github.uaoan'
+                artifactId = '-UaoanStatusLayout'
+                version = '1.0'
+            }
+        }
     }
 }
 
