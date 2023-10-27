@@ -7,9 +7,9 @@ android {
     namespace 'com.uaoanlao.tooll'
     compileSdk 33
 
+
     defaultConfig {
         minSdk 24
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -25,18 +25,23 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
+
 afterEvaluate {
     publishing {
         publications {
-            mavenAar(MavenPublication) {
-                from components.findByName('release')
+            release(MavenPublication) {
+                //from components.release
                 groupId = 'com.github.uaoan'
                 artifactId = '-UaoanStatusLayout'
-                version = '1.0'
+                version ="1.0.0"
+                artifact(bundleReleaseAar)
             }
         }
     }
 }
+
+
 
 dependencies {
 

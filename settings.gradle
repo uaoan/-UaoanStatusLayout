@@ -4,21 +4,17 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.namespace == "com.github.dcendents") {
-                classpath "com.android.tools.build:gradle:4.1.2"
-            }
-        }
-    }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
+
 }
+
 
 rootProject.name = "UaoanTools"
 include ':app'
