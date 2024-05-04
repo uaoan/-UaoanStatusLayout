@@ -84,4 +84,4 @@ uaoanStatusLayoutView.setOnRootClickListener(new UaoanStatusLayoutView.OnRootCli
 
 
 
-[AAR包下载](https://gitee.com/yuxyu47/UaoanStatusLayout/raw/master/UaoanStatusLayoutLibrary.aar)
+
