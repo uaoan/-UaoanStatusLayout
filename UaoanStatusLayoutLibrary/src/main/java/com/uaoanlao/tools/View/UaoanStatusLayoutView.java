@@ -1,5 +1,6 @@
 package com.uaoanlao.tools.View;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.AttributeSet;
@@ -7,8 +8,10 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.uaoanlao.tooll.R;
 
@@ -17,12 +20,17 @@ import com.uaoanlao.tooll.R;
  */
 //布局状态
 public class UaoanStatusLayoutView extends LinearLayout {
-    private RelativeLayout root_view;
+    private LinearLayout root_view;
     private LinearLayout void_wifi; //无网络
     private LinearLayout void_no;  //加载失败
     private LinearLayout void_null;  //加载异常
     private LinearLayout void_void;  //无数据
     private LinearLayout pressedlinear;  //加载中
+    private TextView void_content; //空数据文本
+    private ImageView void_image; //空数据图像
+    private TextView new_content; //自定义数据文本
+    private ImageView new_image; //自定义数据图像
+    private TextView new_start;
     private Context mContext;
     public UaoanStatusLayoutView(Context context) {
         super(context);
@@ -116,6 +124,36 @@ public class UaoanStatusLayoutView extends LinearLayout {
         pressedlinear.setVisibility(View.GONE);
         setParamsLayouts1();
     }
+
+
+    //自定义数据
+    public void showNewCustom(int image, String content) {
+        new_image.setImageResource(image);
+        new_content.setText(content);
+        void_wifi.setVisibility(VISIBLE);
+        void_no.setVisibility(GONE);
+        void_null.setVisibility(GONE);
+        void_void.setVisibility(GONE);
+        pressedlinear.setVisibility(GONE);
+        setParamsLayouts2();
+    }
+
+    //自定义传入布局
+
+    public View showLayoutView(int layout, Activity activity) {
+        void_content.setVisibility(GONE);
+        void_image.setVisibility(GONE);
+        void_wifi.setVisibility(GONE);
+        void_no.setVisibility(GONE);
+        void_null.setVisibility(GONE);
+        void_void.setVisibility(VISIBLE);
+        pressedlinear.setVisibility(GONE);
+        setParamsLayouts2();
+        View void_view = activity.getLayoutInflater().inflate(layout, (ViewGroup) null);
+        void_void.addView(void_view);
+        return void_view;
+    }
+
 
     //设置点击接口
     OnRootClickListener onRootClickListener;

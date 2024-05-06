@@ -1,146 +1,129 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     android:id="@+id/root_view"
     android:background="@color/white"
-    android:gravity="center">
-
-<!--    加载进度-->
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:gravity="center"
-        android:id="@+id/pressedlinear">
+        android:id="@+id/pressedlinear"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <ProgressBar
             android:layout_width="50dp"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp" />
     </LinearLayout>
-
-<!--    加载无网络-->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
         android:id="@+id/void_wifi"
         android:visibility="gone"
-        android:gravity="center">
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <ImageView
+            android:id="@+id/new_image"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:src="@mipmap/wifi"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY" />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="当前无网络!"
+            android:textSize="18dp"
             android:textColor="@color/gray_400"
-            android:textSize="18dp"
-            android:layout_margin="5dp"/>
-
-        <TextView
+            android:id="@+id/new_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="点击重试"
-            android:textColor="@color/gray_600"
+            android:layout_margin="5dp"
+            android:text="当前无网络!" />
+        <TextView
             android:textSize="18dp"
-            android:layout_margin="5dp"/>
-
+            android:textColor="@color/gray_600"
+            android:id="@+id/new_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="点击重试" />
     </LinearLayout>
-
-    <!--    加载失败-->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
-        android:visibility="gone"
         android:id="@+id/void_no"
-        android:gravity="center">
-
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
+            android:layout_margin="5dp"
             android:src="@mipmap/sb"
-            android:scaleType="fitXY"
-            android:layout_margin="5dp"/>
+            android:scaleType="fitXY" />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="加载失败!"
+            android:textSize="18dp"
             android:textColor="@color/gray_400"
-            android:textSize="18dp"
-            android:layout_margin="5dp"/>
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="点击重试"
-            android:textColor="@color/gray_600"
+            android:layout_margin="5dp"
+            android:text="加载失败!" />
+        <TextView
             android:textSize="18dp"
-            android:layout_margin="5dp"/>
-
+            android:textColor="@color/gray_600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="点击重试" />
     </LinearLayout>
-
-    <!--    加载异常-->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
-        android:visibility="gone"
         android:id="@+id/void_null"
-        android:gravity="center">
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@mipmap/yc"
-            android:scaleType="fitXY"
-            android:layout_margin="5dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="加载异常!"
-            android:textColor="@color/gray_400"
-            android:textSize="18dp"
-            android:layout_margin="5dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="点击重试"
-            android:textColor="@color/gray_600"
-            android:textSize="18dp"
-            android:layout_margin="5dp"/>
-
-    </LinearLayout>
-
-    <!--    加载无数据-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
         android:visibility="gone"
-        android:id="@+id/void_void"
-        android:gravity="center">
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@mipmap/voids"
-            android:scaleType="fitXY"
-            android:layout_margin="5dp"/>
+            android:layout_margin="5dp"
+            android:src="@mipmap/yc"
+            android:scaleType="fitXY" />
         <TextView
+            android:textSize="18dp"
+            android:textColor="@color/gray_400"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="没有数据!"
-            android:textColor="@color/gray_400"
+            android:layout_margin="5dp"
+            android:text="加载异常!" />
+        <TextView
             android:textSize="18dp"
-            android:layout_margin="5dp"/>
-
-
+            android:textColor="@color/gray_600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="点击重试" />
     </LinearLayout>
-
-
-</RelativeLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/void_void"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/void_image"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            android:src="@mipmap/voids"
+            android:scaleType="fitXY" />
+        <TextView
+            android:textSize="18dp"
+            android:textColor="@color/gray_400"
+            android:id="@+id/void_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="没有数据!" />
+    </LinearLayout>
+</LinearLayout>

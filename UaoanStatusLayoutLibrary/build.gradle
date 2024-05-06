@@ -69,7 +69,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.github.uaoan'
             artifactId = 'UaoanStatusLayoutLibrary'
-            version = "1.0"
+            version = "1.0.1"
             pom {
                 description = 'UaoanStatusLayoutLibrary'
             }
