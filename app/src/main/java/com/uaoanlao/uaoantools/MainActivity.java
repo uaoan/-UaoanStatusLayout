@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         uaoanStatusLayoutView=findViewById(R.id.uaoanStatusLayoutView);
         uaoanStatusLayoutView.showError();
+        
         uaoanStatusLayoutView.setOnRootClickListener(new UaoanStatusLayoutView.OnRootClickListener() {
             @Override
             public void onRootClick(View view) {

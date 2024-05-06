@@ -57,6 +57,10 @@ public class UaoanStatusLayoutView extends LinearLayout {
         void_null=view.findViewById(R.id.void_null);
         void_void=view.findViewById(R.id.void_void);
         pressedlinear=view.findViewById(R.id.pressedlinear);
+        void_content=view.findViewById(R.id.void_content);
+        new_image=view.findViewById(R.id.new_image);
+        new_content=view.findViewById(R.id.new_content);
+        void_image=view.findViewById(R.id.void_image);
         root_view.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

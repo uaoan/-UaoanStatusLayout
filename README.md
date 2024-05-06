@@ -15,7 +15,7 @@ allprojects {
  **在 app 的 build.gradle 文件中找到 dependencies{} 代码块，并在其中加入以下语句：** 
 
 ```
-implementation 'com.github.uaoan:-UaoanStatusLayout:1.0.1'
+implementation 'com.github.uaoan:-UaoanStatusLayout:uaoan-1.0'
 ```
 
 
@@ -71,12 +71,6 @@ uaoanStatusLayoutView.showDataVoid();
 显示加载中
 uaoanStatusLayoutView.showLoading();
 
-自定义图像、文本
-uaoanStatusLayoutView.showNewCustom(R.mipmap.ic_launcher,"加载失败");
-
-传入自定义布局
-View view=uaoanStatusLayoutView.showLayoutView(R.layout.layout,this);
-
 布局点击重试
 uaoanStatusLayoutView.setOnRootClickListener(new UaoanStatusLayoutView.OnRootClickListener() {
             @Override
@@ -84,7 +78,6 @@ uaoanStatusLayoutView.setOnRootClickListener(new UaoanStatusLayoutView.OnRootCli
                 
             }
         });
-
 
 ```
 
